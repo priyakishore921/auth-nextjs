@@ -5,9 +5,14 @@ export function proxy(request: NextRequest) {
   const path = request.nextUrl.pathname;
   console.log('current path ', path);
 
-  const isPublicPath = path === '/login' || path === '/signup';
+  const isPublicPath = path === '/login' || path === '/signup' 
+  //|| path === '/verifyemail';
 
   const token = request.cookies.get('token')?.value || '';
+
+  // if( path === '/verifyemail') {
+
+  // }
 
   if (isPublicPath && token) {
     console.log(" is public and token exists");
@@ -26,6 +31,7 @@ export const config = {
     '/login',
     '/signup',
     '/profile',
-    '/profile/:id'
+    '/profile/:id',
+    // '/verifyemail'
   ]
 }
