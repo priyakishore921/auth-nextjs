@@ -50,9 +50,13 @@ const LoginPage = () => {
         placeholder='password'
         type='password'
       />
+      <Link
+        href="/forgotpassword"
+        className='text-xs mb-2 flex justify-end underline'
+      >Forgot password</Link>
 
       <button
-        className='border rounded p-2 mb-4 focus:outline-none focus:border-gray-400'
+        className='rounded p-2 mb-4 focus:outline-none focus:bg-blue-400 bg-blue-500 text-white cursor-pointer'
         onClick={onLogin}
       >
         Login here
